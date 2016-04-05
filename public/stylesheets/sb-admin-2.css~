@@ -370,226 +370,77 @@ table.dataTable thead .sorting:after {
 Loading
 */
 
-uiload {
-  display: inline-block;
-  position: relative; }
-  uiload > div {
-    position: relative; }
+#loading {position:absolute;left:calc(50% - 100px);top:calc(50% - 25px);z-index:9999}
+.uil-ripple {position:absolute;left:calc(50% - 90px);top:calc(50% - 90px);opacity:.5;z-index:999}
 
-@-webkit-keyframes uil-battery-demo-anim4 {
-  0% {
-    opacity: 0; }
+.ld-l {opacity:0;animation: ld-in 3s 0.0s ease infinite;}
+.ld-o {opacity:0;animation: ld-in 3s 0.1s ease infinite;}
+.ld-a {opacity:0;animation: ld-in 3s 0.2s ease infinite;}
+.ld-d {opacity:0;animation: ld-in 3s 0.3s ease infinite;}
+.ld-i {opacity:0;animation: ld-in 3s 0.4s ease infinite;}
+.ld-n {opacity:0;animation: ld-in 3s 0.5s ease infinite;}
+.ld-g {opacity:0;animation: ld-in 3s 0.6s ease infinite;}
 
-  10% {
-    opacity: 0; }
+@keyframes ld-in {
+  0% {opacity:0;transform:scale(0);}
+  30% {opacity:1;transform:scale(1);}
+  100% {opacity:1;transform:scale(1);}
+}
 
-  30% {
-    opacity: 1; } }
 
-@-moz-keyframes uil-battery-demo-anim4 {
-  0% {
-    opacity: 0; }
+/*
+  css for image upload
+*/
 
-  10% {
-    opacity: 0; }
+#uploadFile{
+   height: 31px;
+   margin-left: 10px;
+   border-radius: 5px;
+   padding-left: 10px;
+   border: 1px solid #ccc;
+}
 
-  30% {
-    opacity: 1; } }
+.custom-file-input {
+		display: inline-block;
+		position: relative;
+		color: #fff;
+                float: left;
+	}
+	.custom-file-input input {
+		visibility: hidden;
+	}
+	.custom-file-input:before {
+		content: 'Choose File';
+		display: block;
+		background: -webkit-linear-gradient( -180deg, #449d44, #398439);
+		background: -o-linear-gradient( -180deg, #449d44, #398439);
+		background: -moz-linear-gradient( -180deg, #449d44, #398439);
+		background: linear-gradient( -180deg, #449d44, #398439);
+		border: 1px solid #398439;
+		border-radius: 5px;
+		padding: 5px 0px;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+		font-size: 10pt;
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+	.custom-file-input:hover:before {
+		border-color: #449d44;
+	}
+		.custom-file-input:active:before {
+		background: #449d44;
+	}
 
-@-ms-keyframes uil-battery-demo-anim4 {
-  0% {
-    opacity: 0; }
 
-  10% {
-    opacity: 0; }
+/*
 
-  30% {
-    opacity: 1; } }
+Grid style
+*/
 
-@keyframes uil-battery-demo-anim4 {
-  0% {
-    opacity: 0; }
 
-  10% {
-    opacity: 0; }
-
-  30% {
-    opacity: 1; } }
-
-@-webkit-keyframes uil-battery-demo-anim3 {
-  0% {
-    opacity: 0; }
-
-  30% {
-    opacity: 0; }
-
-  50% {
-    opacity: 1; } }
-
-@-moz-keyframes uil-battery-demo-anim3 {
-  0% {
-    opacity: 0; }
-
-  30% {
-    opacity: 0; }
-
-  50% {
-    opacity: 1; } }
-
-@-ms-keyframes uil-battery-demo-anim3 {
-  0% {
-    opacity: 0; }
-
-  30% {
-    opacity: 0; }
-
-  50% {
-    opacity: 1; } }
-
-@keyframes uil-battery-demo-anim3 {
-  0% {
-    opacity: 0; }
-
-  30% {
-    opacity: 0; }
-
-  50% {
-    opacity: 1; } }
-
-@-webkit-keyframes uil-battery-demo-anim2 {
-  0% {
-    opacity: 0; }
-
-  50% {
-    opacity: 0; }
-
-  70% {
-    opacity: 1; } }
-
-@-moz-keyframes uil-battery-demo-anim2 {
-  0% {
-    opacity: 0; }
-
-  50% {
-    opacity: 0; }
-
-  70% {
-    opacity: 1; } }
-
-@-ms-keyframes uil-battery-demo-anim2 {
-  0% {
-    opacity: 0; }
-
-  50% {
-    opacity: 0; }
-
-  70% {
-    opacity: 1; } }
-
-@keyframes uil-battery-demo-anim2 {
-  0% {
-    opacity: 0; }
-
-  50% {
-    opacity: 0; }
-
-  70% {
-    opacity: 1; } }
-
-@-webkit-keyframes uil-battery-demo-anim1 {
-  0% {
-    opacity: 0; }
-
-  70% {
-    opacity: 0; }
-
-  90% {
-    opacity: 1; } }
-
-@-moz-keyframes uil-battery-demo-anim1 {
-  0% {
-    opacity: 0; }
-
-  70% {
-    opacity: 0; }
-
-  90% {
-    opacity: 1; } }
-
-@-ms-keyframes uil-battery-demo-anim1 {
-  0% {
-    opacity: 0; }
-
-  70% {
-    opacity: 0; }
-
-  90% {
-    opacity: 1; } }
-
-@keyframes uil-battery-demo-anim1 {
-  0% {
-    opacity: 0; }
-
-  70% {
-    opacity: 0; }
-
-  90% {
-    opacity: 1; } }
-
-.uil-battery-demo-css {
-  background: none;
-  position: relative;
-  width: 200px;
-  height: 200px; }
-  .uil-battery-demo-css .outer {
-    position: absolute;
-    width: 104px;
-    border: 16px solid #0d8c30;
-    height: 145px;
-    top: 35px;
-    left: 47px;
-    border-radius: 10px; }
-    .uil-battery-demo-css .outer:after {
-      content: " ";
-      display: block;
-      position: absolute;
-      top: -33px;
-      left: 6px;
-      width: 60px;
-      height: 32px;
-      border-radius: 10px;
-      background: #0d8c30; }
-  .uil-battery-demo-css .inner {
-    position: absolute;
-    width: 60px;
-    height: 20px;
-    left: 69px;
-    background: #00f1ff; }
-  .uil-battery-demo-css .inner:nth-of-type(2) {
-    top: 58px;
-    -ms-animation: uil-battery-demo-anim1 1.5s linear infinite;
-    -moz-animation: uil-battery-demo-anim1 1.5s linear infinite;
-    -webkit-animation: uil-battery-demo-anim1 1.5s linear infinite;
-    -o-animation: uil-battery-demo-anim1 1.5s linear infinite;
-    animation: uil-battery-demo-anim1 1.5s linear infinite; }
-  .uil-battery-demo-css .inner:nth-of-type(3) {
-    top: 85px;
-    -ms-animation: uil-battery-demo-anim2 1.5s linear infinite;
-    -moz-animation: uil-battery-demo-anim2 1.5s linear infinite;
-    -webkit-animation: uil-battery-demo-anim2 1.5s linear infinite;
-    -o-animation: uil-battery-demo-anim2 1.5s linear infinite;
-    animation: uil-battery-demo-anim2 1.5s linear infinite; }
-  .uil-battery-demo-css .inner:nth-of-type(4) {
-    top: 112px;
-    -ms-animation: uil-battery-demo-anim3 1.5s linear infinite;
-    -moz-animation: uil-battery-demo-anim3 1.5s linear infinite;
-    -webkit-animation: uil-battery-demo-anim3 1.5s linear infinite;
-    -o-animation: uil-battery-demo-anim3 1.5s linear infinite;
-    animation: uil-battery-demo-anim3 1.5s linear infinite; }
-  .uil-battery-demo-css .inner:nth-of-type(5) {
-    top: 139px;
-    -ms-animation: uil-battery-demo-anim4 1.5s linear infinite;
-    -moz-animation: uil-battery-demo-anim4 1.5s linear infinite;
-    -webkit-animation: uil-battery-demo-anim4 1.5s linear infinite;
-    -o-animation: uil-battery-demo-anim4 1.5s linear infinite;
-    animation: uil-battery-demo-anim4 1.5s linear infinite; }
+#tblGrid td, #tblGrid th{
+   height: 60px;
+}

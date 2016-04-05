@@ -31,6 +31,8 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/panaroma', routes.panaroma);
 app.get('/details', routes.details);
+app.get('/upload', routes.uploadimage);
+app.post('/upload', routes.upload);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

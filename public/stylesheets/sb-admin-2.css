@@ -386,3 +386,61 @@ Loading
   30% {opacity:1;transform:scale(1);}
   100% {opacity:1;transform:scale(1);}
 }
+
+
+/*
+  css for image upload
+*/
+
+#uploadFile{
+   height: 31px;
+   margin-left: 10px;
+   border-radius: 5px;
+   padding-left: 10px;
+   border: 1px solid #ccc;
+}
+
+.custom-file-input {
+		display: inline-block;
+		position: relative;
+		color: #fff;
+                float: left;
+	}
+	.custom-file-input input {
+		visibility: hidden;
+	}
+	.custom-file-input:before {
+		content: 'Choose File';
+		display: block;
+		background: -webkit-linear-gradient( -180deg, #449d44, #398439);
+		background: -o-linear-gradient( -180deg, #449d44, #398439);
+		background: -moz-linear-gradient( -180deg, #449d44, #398439);
+		background: linear-gradient( -180deg, #449d44, #398439);
+		border: 1px solid #398439;
+		border-radius: 5px;
+		padding: 5px 0px;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+		font-size: 10pt;
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+	.custom-file-input:hover:before {
+		border-color: #449d44;
+	}
+		.custom-file-input:active:before {
+		background: #449d44;
+	}
+
+
+/*
+
+Grid style
+*/
+
+
+#tblGrid td, #tblGrid th{
+   height: 60px;
+}
