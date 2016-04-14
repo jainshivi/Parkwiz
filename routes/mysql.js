@@ -43,4 +43,20 @@ function fetchData(callback,sqlQuery){
 	});	
 }	
 
+function insertData(callback,sqlQuery){
+	
+	console.log("\nSQL Query::"+sqlQuery);
+	var connection = getConnectionFromPool();
+	connection.query(sqlQuery, function(err, rows, fields) {
+		if(err){
+			console.log("ERROR: " + err.message);
+		}
+		else 
+		{	releaseConnection(connection);
+			callback(err, rows);
+		}
+	});
+}	
+
 exports.fetchData=fetchData;
+exports.insertData=insertData;
