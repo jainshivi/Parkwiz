@@ -220,10 +220,12 @@
 										class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
 								</a>
 									<ul class="dropdown-menu dropdown-user">
-										<li onclick="onClickMyAccount();"><a href="#"><i class="fa fa-user fa-fw"></i>
+										<li id="myaccount" onclick="onClickMyAccount();">
+											<a href="#"><i class="fa fa-user fa-fw"></i>
 												My Account</a></li>
 
-										<li><a href="/"><i class="fa fa-calendar fa-fw"></i>
+										<li id="bookinghistory" onclick="onClickBookingHistory();">
+											<a href="#"><i class="fa fa-calendar fa-fw"></i>
 												Booking History</a></li>
 										<li class="divider"></li>
 										<li><a href="#"><i class="fa fa-gear fa-fw"></i>
@@ -276,6 +278,14 @@
 		location.reload();
 	}
 
+	function onClickBookingHistory() {
+		if(typeof(Storage) !== "undefined") {
+			sessionStorage.setItem("template", "My Booking History");
+		}
+
+		location.reload();
+	}
+
 	function layoutmodule($scope, $http) {
 		var templateName = "Search Page"; // Search is the default url.
 		if(typeof(Storage) !== "undefined") {
@@ -293,7 +303,12 @@
 		},
 		{
 			name : 'My Account',
-			url : '/myaccount'	
+			url : '/myaccount',
+			
+		} ,
+		{
+			name : 'My Booking History',
+			url : '/bookinghistory'	
 		} ];
 
 		$scope.templates.forEach(function(template) {

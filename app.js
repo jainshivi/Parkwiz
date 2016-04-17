@@ -46,6 +46,7 @@ app.post('/checksignin', signin.checksignin);
 app.post('/savesignup', signup.savesignup);
 app.get('/register', signup.register);
 app.get('/myaccount', routes.myaccount);
+app.get('/bookinghistory', routes.bookinghistory);
 
 app.get('/api/session',function(req,res){
 	

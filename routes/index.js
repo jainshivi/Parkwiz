@@ -36,7 +36,26 @@ exports.search = function(req, res) {
 };
 
 exports.myaccount = function(req, res) {
+	var userDetails = {
+		'userid': 0,
+  		'firstname': 'Shivi',
+  		'lastname': 'Jain',
+  		'email': 'blah@foo.com',
+  		'password': '',
+  		'address': 'blah st, San Jose, Ca',
+  		'phoneno': '111-222-3333',
+  		'isVendor': 'no'
+	};
+	
 	res.render('myaccount', {
+		title : 'ParkWiz',
+		userDetails: userDetails
+	});
+
+};
+
+exports.bookinghistory = function(req, res) {
+	res.render('bookinghistory', {
 		title : 'ParkWiz'
 	});
 };
