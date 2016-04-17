@@ -35,6 +35,12 @@ exports.search = function(req, res) {
 	});
 };
 
+exports.myaccount = function(req, res) {
+	res.render('myaccount', {
+		title : 'ParkWiz'
+	});
+};
+
 /*
  upload image
  */

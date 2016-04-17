@@ -36,6 +36,7 @@
 <link href="/stylesheets/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
 
+<link media="all" type="text/css" rel="stylesheet" href="/stylesheets/myaccount.css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -219,6 +220,12 @@
 										class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
 								</a>
 									<ul class="dropdown-menu dropdown-user">
+										<li onclick="onClickMyAccount();"><a href="#"><i class="fa fa-user fa-fw"></i>
+												My Account</a></li>
+
+										<li><a href="/"><i class="fa fa-calendar fa-fw"></i>
+												Booking History</a></li>
+										<li class="divider"></li>
 										<li><a href="#"><i class="fa fa-gear fa-fw"></i>
 												Settings</a></li>
 										<li class="divider"></li>
@@ -261,13 +268,40 @@
 </body>
 
 <script>
+	function onClickMyAccount() {
+		if(typeof(Storage) !== "undefined") {
+			sessionStorage.setItem("template", "My Account");
+		}
+
+		location.reload();
+	}
+
 	function layoutmodule($scope, $http) {
+		var templateName = "Search Page"; // Search is the default url.
+		if(typeof(Storage) !== "undefined") {
+			templateName = sessionStorage.getItem("template");
+			if (!templateName) {
+				templateName = "Search Page";
+			} else {
+				sessionStorage.removeItem("template");
+			}
+		}
+		
 		$scope.templates = [ {
 			name : 'Search Page',
 			url : '/search'
+		},
+		{
+			name : 'My Account',
+			url : '/myaccount'	
 		} ];
 
-		$scope.template = $scope.templates[0];
+		$scope.templates.forEach(function(template) {
+    		if (template['name'] == templateName) {
+				$scope.template = template;
+			}
+		});
+		
 		//initialize();
 	}
 
@@ -275,6 +309,7 @@
 		initMap();
 	}
 </script>
+
 <script>
 	$(".aNav").click(function() {
 		$(".aNav").each(function(val) {
