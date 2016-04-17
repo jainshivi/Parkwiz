@@ -9,5 +9,6 @@
     "express": "3.2.6",
     "ejs": "*",
     "mysql": "*",
+    "password-hash-and-salt": "^0.1.3"
   }
 }
