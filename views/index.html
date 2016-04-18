@@ -319,7 +319,27 @@
 		{
 			name : 'My Booking History',
 			url : '/bookinghistory',
-			initializeFunction: undefined
+			initializeFunction: function($scope) {
+				$scope.bookingInfo = [{
+					'location': 'blah st, San Jose, Ca',
+			  		'from': '01/01/2016',
+			  		'to': '01/03/2016',
+			  		'status': 'Completed'
+				},
+				{
+					'location': 'blah st, San Jose, Ca',
+			  		'from': '02/01/2016',
+			  		'to': '02/03/2016',
+			  		'status': 'Pending'
+				},
+				{
+					'location': 'blah st, San Jose, Ca',
+			  		'from': '04/01/2015',
+			  		'to': '04/03/2015',
+			  		'status': 'Completed'
+				}
+				];
+			}
 		} ];
 
 		$scope.templates.forEach(function(template) {
