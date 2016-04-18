@@ -299,16 +299,27 @@
 		
 		$scope.templates = [ {
 			name : 'Search Page',
-			url : '/search'
+			url : '/search',
+			initializeFunction: undefined
 		},
 		{
 			name : 'My Account',
 			url : '/myaccount',
-			
+			initializeFunction: function($scope) {
+				$scope.userInfo = {
+					'firstname': 'Shivi',
+			  		'lastname': 'Jain',
+			  		'email': 'blah@foo.com',
+			  		'address': 'blah st, San Jose, Ca',
+			  		'phoneno': '111-222-3333'
+				};
+			}
+
 		} ,
 		{
 			name : 'My Booking History',
-			url : '/bookinghistory'	
+			url : '/bookinghistory',
+			initializeFunction: undefined
 		} ];
 
 		$scope.templates.forEach(function(template) {
@@ -317,6 +328,10 @@
 		     }
     		if (template['name'] == templateName) {
 				$scope.template = template;
+
+				if (template.initializeFunction) {
+					template.initializeFunction($scope);
+				}
 			}
 		});
 		
