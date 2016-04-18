@@ -223,7 +223,7 @@
 										<li id="myaccount" onclick="onClickMyAccount();">
 											<a href="#"><i class="fa fa-user fa-fw"></i>
 												My Account</a></li>
-<li class="divider"></li>											
+<li class="divider"></li>				
 										<li id="bookinghistory" onclick="onClickBookingHistory();">
 											<a href="#"><i class="fa fa-calendar fa-fw"></i>
 												Booking History</a></li>
@@ -315,6 +315,9 @@
     	   	     if (template['name'] == templateName) {
 				$scope.template = template;
 		     }
+    		if (template['name'] == templateName) {
+				$scope.template = template;
+			}
 		});
 		
 		//initialize();
