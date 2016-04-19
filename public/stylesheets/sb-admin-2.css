@@ -217,7 +217,7 @@ body {
 }
 
 .login-panel {
-    margin-top: 45%;
+    /*margin-top: 45%;*/
 }
 
 .flot-chart {
@@ -375,6 +375,45 @@ table.dataTable thead .sorting:after {
     .navtable{
     	width: 0%;
     }
+    #log{
+    	top: 27%!important;
+    	left: 15%!important;
+    	width: 70%!important;
+    }
+
+.fb-profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+}
+
+.fb-image-profile
+{
+    margin: -45px 10px 0px 20px;
+    z-index: 9;
+    width: 20%; 
+    background-color: #4169E1;
+}
+
+#col{
+   margin-left: 3.8%;
+   margin-right: 3.8%;
+   margin-bottom: 3%;
+   border: 1px solid #ccc;
+   min-height: 150px;
+   background-color: #fff;
+   border-bottom: 2px solid #ccc;
+   border-radius: 4px;
+}
+
+.labelclass{
+    float: left;
+    width: 30%;
+}
+
+.textboxclass{
+    width: 68%;
+}
+
 }
 
 
