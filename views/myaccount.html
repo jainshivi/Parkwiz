@@ -10,17 +10,17 @@
                         <fieldset>
                             <div class="form-group">
                                 <label style = "float: left;width: 20%;" >First Name</label>
-                                <input class="form-control" placeholder="First Name"  style = "float: left;width: 70.83333333%;"autofocus>
+                                <input class="form-control" value="{{ userInfo['firstname'] }}"  style = "float: left;width: 70.83333333%;"autofocus>
                             </div>
                             <br/><br/>
                              <div class="form-group">
                                 <label style = "float: left;width: 20%;" >Last Name</label>
-                                <input class="form-control" placeholder="Last Name"  style = "float: left;width: 70.83333333%;">
+                                <input class="form-control" value="{{ userInfo['lastname'] }}"  style = "float: left;width: 70.83333333%;">
                             </div>
                             <br/><br/>
                              <div class="form-group">
                                 <label style = "float: left;width: 20%;" >Email</label>
-                                <input class="form-control" placeholder="Email"  style = "float: left;width: 70.83333333%;" type="email">
+                                <input class="form-control"  value="{{ userInfo['email'] }}"  style = "float: left;width: 70.83333333%;" type="email">
                             </div>
                             <br/><br/>
                              <div class="form-group">
@@ -30,12 +30,12 @@
                             <br/><br/>
                             <div class="form-group">
                                 <label style = "float: left;width: 20%;" >Address</label>
-                                <textarea class="form-control" placeholder="Address"  style = "float: left;width: 70.83333333%;"></textarea>                
+                                <textarea class="form-control"  value="{{ userInfo['address'] }}"  style = "float: left;width: 70.83333333%;"></textarea>                
                             </div>
                             <br/><br/><br/>
                              <div class="form-group">
                                 <label style = "float: left;width: 20%;" >Mobile No.</label>
-                                <input class="form-control" placeholder="999-999-9999" type="tel"  style = "float: left;width: 70.83333333%;">
+                                <input class="form-control"  value="{{ userInfo['phoneno'] }}" type="tel"  style = "float: left;width: 70.83333333%;">
                             </div>
                             <br/><br/>
 
