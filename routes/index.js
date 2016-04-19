@@ -11,6 +11,18 @@ exports.index = function(req, res) {
 	});
 };
 
+exports.abc = function(req, res) {
+	res.render('Carousel', {
+		title : 'ParkWiz'
+	});
+};
+
+exports.profile = function(req, res) {
+	res.render('profile', {
+		title : 'ParkWiz'
+	});
+};
+
 exports.panaroma = function(req, res) {
 	res.render('panaroma', {
 		title : 'ParkWiz'
@@ -36,20 +48,9 @@ exports.search = function(req, res) {
 };
 
 exports.myaccount = function(req, res) {
-	var userDetails = {
-		'userid': 0,
-  		'firstname': 'Shivi',
-  		'lastname': 'Jain',
-  		'email': 'blah@foo.com',
-  		'password': '',
-  		'address': 'blah st, San Jose, Ca',
-  		'phoneno': '111-222-3333',
-  		'isVendor': 'no'
-	};
 	
 	res.render('myaccount', {
-		title : 'ParkWiz',
-		userDetails: userDetails
+		title : 'ParkWiz'
 	});
 
 };
