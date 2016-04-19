@@ -48,11 +48,9 @@ exports.search = function(req, res) {
 };
 
 exports.myaccount = function(req, res) {
-	
 	res.render('myaccount', {
 		title : 'ParkWiz'
 	});
-
 };
 
 exports.bookinghistory = function(req, res) {
