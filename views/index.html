@@ -39,7 +39,8 @@
 <!-- Profile CSS -->
 <link href="/stylesheets/profile.css" rel="stylesheet">
 
-<link media="all" type="text/css" rel="stylesheet" href="/stylesheets/myaccount.css">
+<link media="all" type="text/css" rel="stylesheet"
+	href="/stylesheets/myaccount.css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -99,7 +100,7 @@
 					<td>
 						<div style="float: right;">
 							<ul id="subdiv" class="nav navbar-top-links navbar-right">
-								<li class="dropdown"><a class="dropdown-toggle"
+								<!--<li class="dropdown"><a class="dropdown-toggle"
 									data-toggle="dropdown" href="#"> <i
 										class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
 								</a>
@@ -171,9 +172,9 @@
 										<li><a class="text-center" href="#"> <strong>See
 													All Tasks</strong> <i class="fa fa-angle-right"></i>
 										</a></li>
-									</ul> <!-- /.dropdown-tasks --></li>
+									</ul></li> -->
 								<!-- /.dropdown -->
-								<li class="dropdown"><a class="dropdown-toggle"
+								<!--<li class="dropdown"><a class="dropdown-toggle"
 									data-toggle="dropdown" href="#"> <i
 										class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
 								</a>
@@ -216,20 +217,20 @@
 										<li><a class="text-center" href="#"> <strong>See
 													All Alerts</strong> <i class="fa fa-angle-right"></i>
 										</a></li>
-									</ul> <!-- /.dropdown-alerts --></li>
+									</ul></li> -->
 								<!-- /.dropdown -->
 								<li class="dropdown"><a class="dropdown-toggle"
 									data-toggle="dropdown" href="#"> <i
 										class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
 								</a>
 									<ul class="dropdown-menu dropdown-user">
-										<li id="myaccount" onclick="onClickMyAccount();">
-											<a href="#"><i class="fa fa-user fa-fw"></i>
-												My Account</a></li>
-<li class="divider"></li>				
+										<li id="myaccount" onclick="onClickMyAccount();"><a
+											href="#"><i class="fa fa-user fa-fw"></i> My Account</a></li>
+										<li class="divider"></li>
 										<li id="bookinghistory" onclick="onClickBookingHistory();">
-											<a href="#"><i class="fa fa-calendar fa-fw"></i>
-												Booking History</a></li>
+											<a href="#"><i class="fa fa-calendar fa-fw"></i> Booking
+												History</a>
+										</li>
 										<li class="divider"></li>
 										<li><a href="#"><i class="fa fa-gear fa-fw"></i>
 												Settings</a></li>
@@ -274,20 +275,20 @@
 
 <script>
 	function onClickMyAccount() {
-		if(typeof(Storage) !== "undefined") {
+		if (typeof (Storage) !== "undefined") {
 			sessionStorage.setItem("template", "My Account");
 		}
 		location.reload();
 	}
 	function onClickBookingHistory() {
-		if(typeof(Storage) !== "undefined") {
+		if (typeof (Storage) !== "undefined") {
 			sessionStorage.setItem("template", "My Booking History");
 		}
 		location.reload();
 	}
 	function layoutmodule($scope, $http) {
 		var templateName = "Search Page"; // Search is the default url.
-		if(typeof(Storage) !== "undefined") {
+		if (typeof (Storage) !== "undefined") {
 			templateName = sessionStorage.getItem("template");
 			if (!templateName) {
 				templateName = "Search Page";
@@ -295,71 +296,66 @@
 				sessionStorage.removeItem("template");
 			}
 		}
-		
+
 		$scope.templates = [ {
 			name : 'Search Page',
 			url : '/search',
-			initializeFunction: undefined
-		},
-		{
+			initializeFunction : undefined
+		}, {
 			name : 'My Account',
-			url : '/profile'
-			initializeFunction: function($scope) {
+			url : '/profile',
+			initializeFunction : function($scope) {
 				$scope.userInfo = {
-					'firstname': 'Shivi',
-			  		'lastname': 'Jain',
-			  		'email': 'blah@foo.com',
-			  		'address': 'blah st, San Jose, Ca',
-			  		'phoneno': '111-222-3333'
+					'firstname' : 'Shivi',
+					'lastname' : 'Jain',
+					'email' : 'blah@foo.com',
+					'address' : 'blah st, San Jose, Ca',
+					'phoneno' : '111-222-3333'
 				};
 			}
-		} ,
-		{
+		}, {
 			name : 'My Booking History',
 			url : '/bookinghistory',
-			initializeFunction: function($scope) {
-				$scope.bookingInfo = [{
-					'location': 'blah st, San Jose, Ca',
-			  		'from': '01/01/2016',
-			  		'to': '01/03/2016',
-			  		'status': 'Completed'
-				},
-				{
-					'location': 'blah st, San Jose, Ca',
-			  		'from': '02/01/2016',
-			  		'to': '02/03/2016',
-			  		'status': 'Pending'
-				},
-				{
-					'location': 'blah st, San Jose, Ca',
-			  		'from': '04/01/2015',
-			  		'to': '04/03/2015',
-			  		'status': 'Completed'
-				}
-				];
+			initializeFunction : function($scope) {
+				$scope.bookingInfo = [ {
+					'location' : 'blah st, San Jose, Ca',
+					'from' : '01/01/2016',
+					'to' : '01/03/2016',
+					'status' : 'Completed'
+				}, {
+					'location' : 'blah st, San Jose, Ca',
+					'from' : '02/01/2016',
+					'to' : '02/03/2016',
+					'status' : 'Pending'
+				}, {
+					'location' : 'blah st, San Jose, Ca',
+					'from' : '04/01/2015',
+					'to' : '04/03/2015',
+					'status' : 'Completed'
+				} ];
 			}
 		} ];
 		$scope.templates.forEach(function(template) {
-    	   	     if (template['name'] == templateName) {
+			if (template['name'] == templateName) {
 				$scope.template = template;
-		     }
-    		if (template['name'] == templateName) {
+			}
+			if (template['name'] == templateName) {
 				$scope.template = template;
 				if (template.initializeFunction) {
 					template.initializeFunction($scope);
 				}
 			}
 		});
-		
+
 		//initialize();
 	}
 	function searchmodule($scope, $http) {
 		initMap();
 	}
 
-	function profilemodule($scope, $http){		
+	function profilemodule($scope, $http) {
 		$(".progress-bar").animate({
-			width: "70%"
+			width : "70%"
 		}, 2500);
 	}
 </script>
