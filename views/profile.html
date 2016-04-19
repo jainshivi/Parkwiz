@@ -4,7 +4,7 @@
         <img align="left" class="fb-image-lg" src="/images/bg.jpg" alt="Profile image example"/>
         <img align="left" class="fb-image-profile thumbnail" src="/images/avatar/femaleavatar.png" alt="Profile image example"/>
         <div class="fb-profile-text">
-            <h1>Name</h1>
+            <h1>{{ userInfo['firstname'] }}  {{ userInfo['lastname'] }}</h1>
 <div>
 <div class="row">
 <div class="col-md-2 col-md-offset-2" id="col">
@@ -32,27 +32,27 @@
                         <fieldset>
                             <div class="form-group">
                                 <label class="labelclass">First Name</label>
-                                <input class="form-control textboxclass" placeholder="First Name" autofocus>
+                                <input class="form-control textboxclass" value="{{ userInfo['firstname'] }}" placeholder="First Name" autofocus>
                             </div>
                              <div class="form-group">
                                 <label class="labelclass" >Last Name</label>
-                                <input class="form-control textboxclass" placeholder="Last Name">
+                                <input class="form-control textboxclass" value="{{ userInfo['lastname'] }}" placeholder="Last Name">
                             </div>
                              <div class="form-group">
                                 <label class="labelclass" >Email</label>
-                                <input class="form-control textboxclass" placeholder="Email" type="email">
+                                <input class="form-control textboxclass" value="{{ userInfo['email'] }}" placeholder="Email" type="email">
                             </div>
                              <div class="form-group">
                                 <label class="labelclass" >Password</label>
-                                <input class="form-control textboxclass" type="password" placeholder="Password">
+                                <input class="form-control textboxclass" value="*************" type="password" placeholder="Password">
                             </div>
                             <div class="form-group">
                                 <label class="labelclass" >Address</label>
-                                <textarea class="form-control textboxclass" placeholder="Address"></textarea>                
+                                <textarea class="form-control textboxclass" value="{{ userInfo['address'] }}" placeholder="Address"></textarea>                
                             </div>
                              <div class="form-group">
                                 <label class="labelclass" >Mobile No.</label>
-                                <input class="form-control textboxclass" placeholder="999-999-9999" type="tel" class="textboxclass">
+                                <input class="form-control textboxclass" placeholder="999-999-9999" value="{{ userInfo['phoneno'] }}" type="tel" class="textboxclass">
                             </div>
                             <br/>
 			    <div class="form-group">

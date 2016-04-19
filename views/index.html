@@ -36,6 +36,9 @@
 <link href="/stylesheets/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
 
+<!-- Profile CSS -->
+<link href="/stylesheets/profile.css" rel="stylesheet">
+
 <link media="all" type="text/css" rel="stylesheet" href="/stylesheets/myaccount.css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -274,18 +277,14 @@
 		if(typeof(Storage) !== "undefined") {
 			sessionStorage.setItem("template", "My Account");
 		}
-
 		location.reload();
 	}
-
 	function onClickBookingHistory() {
 		if(typeof(Storage) !== "undefined") {
 			sessionStorage.setItem("template", "My Booking History");
 		}
-
 		location.reload();
 	}
-
 	function layoutmodule($scope, $http) {
 		var templateName = "Search Page"; // Search is the default url.
 		if(typeof(Storage) !== "undefined") {
@@ -299,32 +298,69 @@
 		
 		$scope.templates = [ {
 			name : 'Search Page',
-			url : '/search'
+			url : '/search',
+			initializeFunction: undefined
 		},
 		{
 			name : 'My Account',
-			url : '/myaccount',
-			
+			url : '/profile',
+			initializeFunction: function($scope) {
+				$scope.userInfo = {
+					'firstname': 'Shivi',
+			  		'lastname': 'Jain',
+			  		'email': 'blah@foo.com',
+			  		'address': 'blah st, San Jose, Ca',
+			  		'phoneno': '111-222-3333'
+				};
+			}
 		} ,
 		{
 			name : 'My Booking History',
-			url : '/bookinghistory'	
+			url : '/bookinghistory',
+			initializeFunction: function($scope) {
+				$scope.bookingInfo = [{
+					'location': 'blah st, San Jose, Ca',
+			  		'from': '01/01/2016',
+			  		'to': '01/03/2016',
+			  		'status': 'Completed'
+				},
+				{
+					'location': 'blah st, San Jose, Ca',
+			  		'from': '02/01/2016',
+			  		'to': '02/03/2016',
+			  		'status': 'Pending'
+				},
+				{
+					'location': 'blah st, San Jose, Ca',
+			  		'from': '04/01/2015',
+			  		'to': '04/03/2015',
+			  		'status': 'Completed'
+				}
+				];
+			}
 		} ];
-
 		$scope.templates.forEach(function(template) {
     	   	     if (template['name'] == templateName) {
 				$scope.template = template;
 		     }
     		if (template['name'] == templateName) {
 				$scope.template = template;
+				if (template.initializeFunction) {
+					template.initializeFunction($scope);
+				}
 			}
 		});
 		
 		//initialize();
 	}
-
 	function searchmodule($scope, $http) {
 		initMap();
+	}
+
+	function profilemodule($scope, $http){		
+		$(".progress-bar").animate({
+			width: "70%"
+		}, 2500);
 	}
 </script>
 
@@ -347,7 +383,7 @@
 
 	$(function() {
 		$('#tabs a:last').tab('show');
-	})
+	});
 </script>
 <script>
 	// This example uses SVG path notation to add a vector-based symbol
