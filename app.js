@@ -36,6 +36,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/abc', routes.abc);
 app.get('/profile', routes.profile);
+app.get('/bookings', routes.bookings);
 
 
 app.get('/panaroma', routes.panaroma);

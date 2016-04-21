@@ -23,6 +23,12 @@ exports.profile = function(req, res) {
 	});
 };
 
+exports.bookings = function(req, res) {
+	res.render('bookings', {
+		title : 'ParkWiz'
+	});
+};
+
 exports.panaroma = function(req, res) {
 	res.render('panaroma', {
 		title : 'ParkWiz'
