@@ -52,7 +52,7 @@ app.post('/savesignup', signup.savesignup);
 app.get('/register', signup.register);
 app.get('/myaccount', routes.myaccount);
 app.get('/bookinghistory', routes.bookinghistory);
-
+app.get('/billing', routes.billing);
 app.get('/api/session',function(req,res){
 	
 	if(req.session.data){

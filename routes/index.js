@@ -65,6 +65,12 @@ exports.bookinghistory = function(req, res) {
 	});
 };
 
+exports.billing = function(req, res) {
+	res.render('billing', {
+		title : 'ParkWiz'
+	});
+};
+
 /*
  upload image
  */
